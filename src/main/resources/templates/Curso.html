@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Visualizar Cursos</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css"/>
+<script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div>
+	<h2>Prova -Projeto Cadastro de Curso</h2>
+	<tr>	
+	   <div align = "left">
+
+		<h3><a th:href="@{'/adicionar'}">Adicionar Novo Curso</a></h3>
+
+	   </div>
+
+	</tr>
+
+	<div class="col-sm-8" align ="center">
+	<div class="panel-body" align ="center">
+
+   <table class="table">
+   <thead class="thead-dark">
+     <tr>
+		<th>Curso ID</th>	
+		<th>Curso Nome</th>
+		<th>Duracao Curso</th>
+		<th>Editar</th>
+		<th>Deletar</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr th:each="curso : ${listcurso}">
+	<td th:text="${curso.id}">Curso id</td>
+	<td th:text="${curso.nomecurso}">Nome Curso</td>
+	<td th:text="${curso.duracao}">Duracao Curso</td>
+
+	<td>
+	   <a th:href="@{'/edit/' +${curso.id}}">Editar</a>
+	</td>
+	<td>
+	   <a th:href="@{'/delete/' + ${curso.id}}">Deletar</a>
+	</td>
+	</tr>
+
+    </tbody>
+ </table>
+
+		   </div>
+		</div>
+
+	</tr>
+
+	</tbody>
+	</table>
+	<div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Cadastro de Curso</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css"/>
+<script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div align="center">
+	<h1>Criar Novo Curso</h1>
+	<br />	
+	   <div class="col-sm-4">
+	<form action="#" th:action="@{/save}" th:object="${curso}" method="post">
+
+		   <div alight="left">
+		   <tr>
+		   <label class="form-label">Nome Curso</label>
+			<td>
+		   <input type="hidden" th:field="*{id}"/>	
+		   <input type="text" th:field="*{nomecurso}" class="form-control" placeholder="Nome Curso"/>
+			</td>
+		</tr>
+		</div>
+
+		<div alight="left">
+		<tr>
+		<label class="form-label">Duracao</label>
+		<td>
+		<input type="text" th:field="*{duracao}" class="form-control" placeholder="Duracao"/>
+		</td>
+		</tr>	
+		</div>
+
+		<br>
+		<tr>
+		<td colspan="2"><button type="submit" class="btn btn-info">Salvar Curso</button></td>
+		</tr>
+
+   </form>
+</div>
+
+</body>
+</html>
